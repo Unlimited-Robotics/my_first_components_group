@@ -1,0 +1,18 @@
+leds:
+  controller: LedsController
+
+  status:
+    - peripherals.leds
+
+  commands:
+    animation:
+      type: ACTION
+      action_name: /gary/leds/leds_play_animation
+      action_type: gary_leds_msgs/action/LedsPlayAnimation
+      timeout: -1
+
+    set_color:
+      type: SERVICE
+      service_name: /gary/leds/leds_set_color
+      service_type: gary_leds_msgs/srv/LedsSetColor
+      timeout: -1

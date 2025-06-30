@@ -1,5 +1,5 @@
 ARG REGISTRY_ENDPOINT
-FROM ${REGISTRY_ENDPOINT}/raya.core.pyraya.ubuntu.20.04_ros.humble_pyraya:jetsonorin.4.27.beta.4
+FROM ${REGISTRY_ENDPOINT}/raya.core.pyraya.pyraya_base:jetsonorin.4.26.beta
 
 ENV SHELL=/bin/bash
 SHELL ["/bin/bash", "-c"]

@@ -1,0 +1,23 @@
+ui:
+
+  status:
+    - ui.chest_web
+
+  commands:
+
+    component:
+      type: ACTION
+      action_name: /raya/chest_web/command
+      action_type: raya_chest_web_msgs/action/ChestWebCommand
+      timeout: -1
+
+    finish:
+      type: SERVICE
+      service_name: /raya/chest_web/finish_command
+      service_type: raya_chest_web_msgs/srv/ChestWebFinishCommand
+      timeout: 100
+      
+  publishers:
+    debug_text:
+      topic_name: /raya/chest_web/debug_msg
+      topic_type: std_msgs/msg/String

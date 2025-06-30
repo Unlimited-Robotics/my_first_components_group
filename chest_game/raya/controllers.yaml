@@ -1,0 +1,11 @@
+ui:
+
+  status:
+    - ui.chest_web
+
+  commands:
+    component:
+      type: ACTION
+      action_name: /raya/chest_web/command
+      action_type: raya_chest_web_msgs/action/ChestWebCommand
+      timeout: -1

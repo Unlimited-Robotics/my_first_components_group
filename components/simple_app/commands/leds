@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TASK_PATH="/robot/src/my_first_components_group/motion/"
+TASK_PATH="/robot/src/my_first_components_group/leds/"
 
 RELAUNCH_DELAY=5
 LOGS_PREFIX="[RAYA TASK] "
