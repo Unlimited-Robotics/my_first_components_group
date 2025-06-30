@@ -1,0 +1,6 @@
+src:
+  - my_first_components_group
+
+ros_pkgs:
+  - raya_status_monitor
+

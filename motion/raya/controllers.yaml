@@ -1,0 +1,31 @@
+navigation:
+  status:
+    - nav.navigation_engine
+
+  subscriptions:
+    navigation_status:
+      topic_name: /gary/nav/status
+      topic_type: raya_status_msgs/msg/ComponentStatus
+
+    localization_status:
+      topic_name: /gary/nav/localization_status
+      topic_type: gary_navigation_msgs/msg/LocalizationStatus
+      field_getters:
+        localized: is_localized
+        current_map: map_name
+
+  commands:
+    set_velocity:
+      type: ACTION
+      action_name: /gary/motion/set_velocity
+      action_type: gary_motion_msgs/action/SetVelocity
+      
+    rotate:
+      type: ACTION
+      action_name: /gary/motion/rotate
+      action_type: gary_motion_msgs/action/Rotate
+
+    move_linear:
+      type: ACTION
+      action_name: /gary/motion/move_linear
+      action_type: gary_motion_msgs/action/MoveLinear
