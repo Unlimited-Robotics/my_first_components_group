@@ -1,26 +1,5 @@
 #!/bin/bash
 
 TASK_PATH="/robot/src/my_first_components_group/motion/"
-
-RELAUNCH_DELAY=5
-LOGS_PREFIX="[RAYA TASK] "
-
-trap "echo 'Interruption detected. Finishing the script...'; exit 0" SIGINT SIGTERM SIGHUP SIGQUIT
-
-echo "${LOGS_PREFIX}Auto start script"
-
-while true; do
-
-    echo "${LOGS_PREFIX}Executing task..."
-    python3 "${TASK_PATH}" --auto-run
-
-    if [ $? -ne 0 ]; then
-        echo "${LOGS_PREFIX}Previous task execution finished with error"
-    else
-        echo "${LOGS_PREFIX}Previous task execution finished successfully"
-    fi
-
-    echo "${LOGS_PREFIX}Launching again in ${RELAUNCH_DELAY} seconds..."
-    sleep 5
-
-done
+echo "${LOGS_PREFIX}Executing task..."
+python3 "${TASK_PATH}" --auto-run
