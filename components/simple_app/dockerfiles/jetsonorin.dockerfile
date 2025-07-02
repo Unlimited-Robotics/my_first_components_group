@@ -1,10 +1,8 @@
-ARG REGISTRY_ENDPOINT
-FROM ${REGISTRY_ENDPOINT}/raya.core.pyraya.pyraya_base:jetsonorin.4.26.beta
+FROM public.ecr.aws/unlimited-robotics/raya.core.pyraya.pyraya_base:jetsonorin.4.26.beta
 
 ENV SHELL=/bin/bash
 SHELL ["/bin/bash", "-c"]
 
-### All the components based on the image ros_humble (jetson) must include this step
 RUN rm -rf /usr/share/keyrings/kitware*.gpg && \
     rm -rf /usr/share/keyrings/ros*.gpg && \
     curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg && \
@@ -13,4 +11,5 @@ RUN rm -rf /usr/share/keyrings/kitware*.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu focal main" > /etc/apt/sources.list.d/kitware.list && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
-###
+
+RUN sed -i '/^deb https:\/\/isaac\.download\.nvidia\.com\/isaac-ros\/ubuntu\/main focal main/s/^/#/' /etc/apt/sources.list
