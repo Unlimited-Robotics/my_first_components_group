@@ -102,11 +102,11 @@ class RayaApplication(RayaApplicationBase):
     async def finish(self,
             ) -> None:
         try:
-            if self.motion.is_moving():
+            if self.nav.set_velocity.is_running():
                 self.log.info('Stopping motion')
-                await self.motion.cancel_motion()
-        except AttributeError:
-            pass
+                await self.nav.set_velocity.cancel_all()
+        except Exception as e:
+            self.log.error(f'Error stopping motion: {e}')
         self.log.info('Finish app called')
 
 
