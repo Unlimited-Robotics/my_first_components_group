@@ -1,5 +1,0 @@
-#!/bin/bash
-
-TASK_PATH="/robot/src/my_first_components_group/chest_game/"
-echo "${LOGS_PREFIX}Executing task..."
-python3 "${TASK_PATH}" --auto-run

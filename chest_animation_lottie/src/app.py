@@ -30,7 +30,7 @@ class RayaApplication(RayaApplicationBase):
 
         res = await self.ui.component(
             component='Animation',
-            priority=2,
+            priority=5,
             goal_data=json.dumps(goal_data),
             wait=True,
         )
